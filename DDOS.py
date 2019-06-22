@@ -4,11 +4,8 @@ import os
 import sys
 import string
 #The green reaper 
-
-os.system("clear")
-time = time.ctime(time.time())
-print
-print """\033[31;1m
+baner="""
+The Green Reaper is here...
 {=}{=}{=}{=}{=}{=}{=}{=}{=}{=}{=}{=}
 {=} DDOS    DDOS    DDOS    DDOS {=}
 {=}  ATACK   ATACK  ATACK  ATACK {=}
